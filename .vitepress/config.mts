@@ -5,7 +5,7 @@ export default defineConfig({
     title: 'My Awesome Project',
     description: 'A VitePress Site',
     base: '/learn',
-    srcDir: './docs',
+    srcDir: 'docs',
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         nav: [
