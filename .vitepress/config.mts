@@ -6,6 +6,7 @@ export default defineConfig({
     description: 'A VitePress Site',
     base: '/learn',
     srcDir: 'docs',
+    outDir: './dist',
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         nav: [
