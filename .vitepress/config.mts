@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-    title: 'ninja is fullstack a development ',
+    title: 'ninja ',
     description: 'A VitePress Site',
     srcDir: './docs',
     base: '/learn',
