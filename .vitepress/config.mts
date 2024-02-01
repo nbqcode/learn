@@ -5,6 +5,7 @@ export default defineConfig({
     title: 'ninja is fullstack a development ',
     description: 'A VitePress Site',
     srcDir: './docs',
+    base: '/learn',
     mpa: true,
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
