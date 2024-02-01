@@ -6,7 +6,7 @@ export default defineConfig({
     description: 'A VitePress Site',
     srcDir: './docs',
     base: '/learn',
-    mpa: true,
+    // mpa: true,
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         search: {
