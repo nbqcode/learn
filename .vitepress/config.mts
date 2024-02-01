@@ -1,13 +1,11 @@
 import { defineConfig } from 'vitepress'
-console.log('hellosfsfsfsfs')
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-    title: 'My Awesome Project',
+    title: 'ninja is fullstack a development ',
     description: 'A VitePress Site',
-    base: '/learn',
     srcDir: './docs',
-
+    mpa: true,
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         search: {
