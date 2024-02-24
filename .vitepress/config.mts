@@ -1,9 +1,9 @@
 import { defineConfig } from "vitepress";
-// https://vitepress.dev/reference/site-config
 
+// https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "ninja",
-  description: "2024 外卖小哥 阿钦的个人帮助手册",
+  description: "A VitePress Site",
   srcDir: "./docs",
   base: "/learn",
   // mpa: true,
@@ -12,38 +12,38 @@ export default defineConfig({
     search: {
       provider: "local",
     },
-    // nav: [
-    //   { text: "首页", link: "/" },
-    //   {
-    //     text: "typescript",
-    //     activematch: "/typescript",
-    //     link: "/typescript/index",
-    //   },
-    //   { text: "vue", activematch: "/vue", link: "/vue/index" },
-    //   { text: "c++", activematch: "/c\\+\\+", link: "/c++/index" },
-    //   { text: "java", activematch: "/java", link: "/java/index" },
-    //   { text: "php", activematch: "/php", link: "/php/index" },
-    //   { text: "golang", activematch: "/golang", link: "/golang/index" },
-    //   { text: "物联网", activematch: "/物联网", link: "/物联网/index" },
-    // ],
-    // // sidebar: {
-    // //   "/typescript": [
-    // //     {
-    // //       text: "guide",
-    // //       collapsed: true,
-    // //       items: [
-    // //         { text: "开始", link: "/typescript/index" },
-    // //         { text: "test", link: "/typescript/test" },
-    // //       ],
-    // //     },
-    // //   ],
-    // //   "/vue": [
-    // //     {
-    // //       text: "guide",
-    // //     },
-    // //   ],
-    // // },
+    nav: [
+      { text: "首页", link: "/" },
+      {
+        text: "typescript",
+        activeMatch: "/typescript",
+        link: "/typescript/index",
+      },
+      { text: "vue", activeMatch: "/vue", link: "/vue/index" },
+      { text: "c++", activeMatch: "/c\\+\\+", link: "/c++/index" },
+      { text: "java", activeMatch: "/java", link: "/java/index" },
+      { text: "php", activeMatch: "/php", link: "/php/index" },
+      { text: "golang", activeMatch: "/golang", link: "/golang/index" },
+      { text: "物联网", activeMatch: "/物联网", link: "/物联网/index" },
+    ],
+    sidebar: {
+      "/typescript": [
+        {
+          text: "Guide",
+          collapsed: true,
+          items: [
+            { text: "开始", link: "/typescript/index" },
+            { text: "test", link: "/typescript/test" },
+          ],
+        },
+      ],
+      "/vue": [
+        {
+          text: "Guide",
+        },
+      ],
+    },
 
-    // sociallinks: [{ icon: "github", link: "https://github.com/nbqcode" }],
+    socialLinks: [{ icon: "github", link: "https://github.com/nbqcode" }],
   },
 });
