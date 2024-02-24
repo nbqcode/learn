@@ -6,5 +6,9 @@
   },
   "devDependencies": {
     "vitepress": "^1.0.0-rc.40"
+  },
+  "dependencies": {
+    "@types/node": "^20.11.20",
+    "vitepress-auto-navigation": "^0.0.4"
   }
 }
