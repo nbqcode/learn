@@ -1,9 +1,6 @@
 import { defineConfig } from "vitepress";
-import fs from "node:fs";
-import path from "node:path";
 import sidebar from "./generateSidebar";
 import nav from "./generateNavbar";
-console.log(JSON.stringify(nav));
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
