@@ -20,21 +20,29 @@ interface NavItem {
   link?: string;
   items?: NavItem[];
 }
-function generateNav(dir: string, parentLink = ""): NavItem[] {
+function generateNav(
+  dir: string,
+  parentLink = "",
+  excludedDirs: string[] = []
+): NavItem[] {
   const nav: NavItem[] = [];
   const files = fs.readdirSync(dir);
+
   files.forEach((file) => {
     const filePath = path.join(dir, file);
     const stat = fs.statSync(filePath);
     if (stat.isDirectory()) {
-      const childLink = path.join(parentLink, file, "/"); // 修正链接路径
-      const children = generateNav(filePath, childLink);
+      if (excludedDirs.includes(file)) {
+        return; // Skip excluded directory
+      }
+      const childLink = path.join(parentLink, file, "/");
+      const children = generateNav(filePath, childLink, excludedDirs);
       if (children.length > 0) {
         nav.push({ text: file, items: children });
       }
-    } else if (file.endsWith(".md")) {
+    } else if (file.endsWith(".md") && file !== "index.md") {
       const fileName = file.replace(/\.md$/, "");
-      const fileLink = path.join(parentLink, fileName); // 修正链接路径
+      const fileLink = path.join(parentLink, fileName);
       nav.push({ text: fileName, link: fileLink });
     }
   });
@@ -42,18 +50,25 @@ function generateNav(dir: string, parentLink = ""): NavItem[] {
   return nav;
 }
 
-const nav = generateNav("./docs");
+const nav = generateNav("./docs", "", ["public", "index"]);
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "My Awesome Project",
-  description: "A VitePress Site",
+  title: "蓝莓笔记",
+  description: "html,css,php,golang,typescript",
   base: "/learn",
   srcDir: "./docs",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    //@ts-ignore
-    nav,
+    logo: "/logo.png",
+    nav: [
+      {
+        text: "首页",
+        link: "/",
+      },
+      //@ts-ignore
+      ...nav,
+    ],
     sidebar: [
       {
         text: "Examples",
