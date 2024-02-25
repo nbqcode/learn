@@ -47,6 +47,9 @@ function getSidebarItems(dir: string, base: string): SidebarItem[] {
         items: getSidebarItems(itemPath, `${base}/${item}`),
       });
     } else if (path.extname(item) === ".md") {
+      if (item.includes("index")) {
+        return;
+      }
       sidebarItems.push({
         text: item.replace(".md", ""),
         link: `${base}/${item.replace(".md", "")}`,
